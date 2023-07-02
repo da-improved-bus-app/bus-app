@@ -1,7 +1,6 @@
 "use client"
 
 import dynamic from 'next/dynamic'
-// import OpenStreetMap from '../component/OpenStreetMap'
 const OpenStreetMap = dynamic(() => import('./OpenStreetMap'), {
   ssr: false,
 })
