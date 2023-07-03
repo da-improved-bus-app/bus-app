@@ -10,7 +10,7 @@ const myIcon = new Icon({
 
 
 const OpenStreetMap = () => {
-  const [center, setCenter] = useState({ lat: 51.505, lng: -0.09 });
+  const [center, setCenter] = useState({ lat: 21.3099, lng: -157.8581 });
   const ZOOM_LEVEL = 13;
   const mapRef = useRef();
 
@@ -21,13 +21,13 @@ const OpenStreetMap = () => {
         center={center}
         zoom={ZOOM_LEVEL}
         ref={mapRef}
-        className="min-h-[600px] h-[80vh] w-3/4"
+        className="min-h-[600px] h-[80vh] w-3/4 rounded-lg"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.505, -0.09]} icon={myIcon}>
+        <Marker position={[21.3099, -157.8581]} icon={myIcon}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
