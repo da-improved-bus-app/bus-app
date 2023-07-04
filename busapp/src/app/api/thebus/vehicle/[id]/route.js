@@ -20,6 +20,7 @@ export async function GET(request) {
   const dom = new JSDOM(data);
   const vehicles = dom.window.document.querySelectorAll("vehicle");
 
+  let vehiclesData = [];
   for (const vehicle of vehicles) {
     const number = vehicle.querySelector("number").textContent;
     const trip = vehicle.querySelector("trip").textContent;
@@ -43,10 +44,10 @@ export async function GET(request) {
       "headsign": headsign
     }
 
-    console.log(obj)
+    vehiclesData.push(obj);
   }
 
   if (!data) return NextResponse.json({ message: "Not found" });
 
-  return NextResponse.json(data);
+  return NextResponse.json(vehiclesData);
 }
