@@ -28,8 +28,7 @@ const HolocardPage = () => {
   }
 
   return (
-    <>
-      <div>Hello</div>
+    <div className="p-3">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -38,14 +37,14 @@ const HolocardPage = () => {
       >
         <div>card number</div>
         <input
-          placeholder="card number"
+          placeholder="Card Number"
           onChange={(e) => {
             setCardNumber(e.target.value);
           }}
         />
         <div>security code</div>
         <input
-          placeholder="card number"
+          placeholder="Security Code"
           onChange={(e) => {
             setSecurityCode(e.target.value);
           }}
@@ -59,7 +58,7 @@ const HolocardPage = () => {
           Processing...
         </div>
       <div>{holocardData}</div>
-    </>
+    </div>
   );
 };
 
