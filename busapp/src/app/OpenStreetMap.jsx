@@ -16,7 +16,6 @@ const OpenStreetMap = () => {
 
   return (
     <div className="flex justify-center flex-col items-center">
-      <h1>OpenStreetMap Embeded</h1>
       <MapContainer
         center={center}
         zoom={ZOOM_LEVEL}

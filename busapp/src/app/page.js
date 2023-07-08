@@ -7,7 +7,7 @@ const OpenStreetMap = dynamic(() => import('./OpenStreetMap'), {
 const Home = () => {
   return (
     <>
-      <h1 className='text-center'>OpenStreetMap</h1>
+      <h1 className='text-center'>dabus3.0</h1>
       <OpenStreetMap />
     </>
   )
