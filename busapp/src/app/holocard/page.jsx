@@ -75,7 +75,7 @@ const HolocardPage = () => {
         Processing...
       </div> */}
       <Card>
-        <div className="h-96 p-6 flex items-center text-7xl font-light">
+        <div className="h-96 p-6 flex items-center text-[6vw] font-light">
           <div>Your balance is: {holocardData ? `$${(holocardData/100).toFixed(2)}`: ""}</div>
         </div>
       </Card>
