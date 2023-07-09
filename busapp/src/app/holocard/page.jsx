@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Container from "../../../components/Container";
-import Card from "../../../components/Card";
+import Container from "../../components/Container";
+import Card from "../../components/Card";
 
 const HolocardPage = () => {
   const [holocardData, setHolocardData] = useState(null);
