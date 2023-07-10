@@ -6,9 +6,25 @@ import React, { useState } from "react";
 
 const page = () => {
   const [search, setSearch] = useState(0);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("on submit search is:", search);
+    getArrivals(search);
+  }
+
+  async function getArrivals(stopNumber) {
+    const res = await fetch(`/api/thebus/arrivals/${stopNumber}`);
+    const status = await res.status;
+
+    if (status === 404) {
+      console.log("invalid route");
+      return;
+    }
+
+    const data = await res.json();
+    console.log("data", data);
+
   }
 
   return (
@@ -31,9 +47,9 @@ const page = () => {
           </svg>
           <input
             placeholder="Search"
-            className="outline-none"
+            className="outline-none w-full"
             type="number"
-            onChange={(e) => {setSearch(e.target.value)}}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <button hidden type="submit"/>
         </form>
