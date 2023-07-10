@@ -1,12 +1,20 @@
+"use client"
+
 import Card from "@/components/Card";
 import Container from "@/components/Container";
-import React from "react";
+import React, { useState } from "react";
 
 const page = () => {
+  const [search, setSearch] = useState(0);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("on submit search is:", search);
+  }
+
   return (
     <Container>
       <div className="flex justify-center">
-        <div className="rounded-2xl bg-white flex px-3 py-2 w-full md:w-96 text-sm border">
+        <form className="rounded-2xl bg-white flex px-3 py-2 w-full md:w-96 text-sm border" onSubmit={handleSubmit}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -24,8 +32,11 @@ const page = () => {
           <input
             placeholder="Search"
             className="outline-none"
+            type="number"
+            onChange={(e) => {setSearch(e.target.value)}}
           />
-        </div>
+          <button hidden type="submit"/>
+        </form>
       </div>
       <Card>Hello</Card>
     </Container>
